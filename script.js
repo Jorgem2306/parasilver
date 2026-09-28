@@ -88,8 +88,8 @@ function generateTextPoints(message) {
     offCtx.textBaseline = 'middle';
     offCtx.fillStyle = '#ffffff';
 
-    // Centrado en el tercio superior de la pantalla
-    const startY = height * 0.24;
+    // Centrado: En móviles lo bajamos un poco más para no chocar con el título agrandado
+    const startY = width < 768 ? height * 0.32 : height * 0.24;
     lines.forEach((line, index) => {
         offCtx.fillText(line, width / 2, startY + (index * fontSize * 1.15));
     });
@@ -461,7 +461,7 @@ function startFinalPhraseClimax() {
     document.getElementById('subHeaderInstruction').textContent = 'Observa cómo se reúnen en el firmamento...';
 
     // 2. Extraer los puntos que forman las letras
-    textTargetPoints = generateTextPoints('Feliz\nCumpleaños');
+    textTargetPoints = generateTextPoints('Feliz\nCumpleaños\nSilver');
 
     // 3. Crear enjambre de partículas convergiendo desde las posiciones de las luciérnagas
     const centerX = width / 2;

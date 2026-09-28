@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="relative w-full h-[100dvh] flex flex-col items-center justify-between text-slate-100 overflow-hidden bg-[#050B14]">
+<body
+    class="relative w-full h-[100dvh] flex flex-col items-center justify-between text-slate-100 overflow-hidden bg-[#050B14]">
 
     <!-- Canvas de fondo para estrellas, luciérnagas voladoras y texto -->
     <canvas id="skyCanvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
@@ -28,13 +29,15 @@
     <header
         class="relative z-10 w-full pt-6 md:pt-10 px-6 text-center pointer-events-none transition-opacity duration-1000"
         id="headerSection">
-        <span class="inline-block text-amber-300/80 tracking-[0.3em] uppercase text-xs md:text-sm font-cinzel mb-1 animate-title-1">
+        <span
+            class="inline-block text-amber-300/80 tracking-[0.3em] uppercase text-sm md:text-base font-cinzel mb-2 animate-title-1">
             Para ti en tu día
         </span>
-        <h1 class="text-2xl md:text-3xl font-playfair tracking-wide text-amber-100 drop-shadow-md animate-title-2">
+        <h1 class="text-3xl md:text-5xl font-playfair tracking-wide text-amber-100 drop-shadow-md animate-title-2">
             <span class="inline-block glow-title">El Frasco de los Recuerdos</span>
         </h1>
-        <p class="text-slate-400 text-sm md:text-base italic max-w-sm mx-auto mt-1 animate-title-3" id="subHeaderInstruction">
+        <p class="text-slate-400 text-base md:text-lg italic max-w-md mx-auto mt-2 animate-title-3"
+            id="subHeaderInstruction">
             Toca el frasco para liberar una luciérnaga con un recuerdo.
         </p>
     </header>
@@ -106,13 +109,13 @@
         </p>
         <button id="closeWishBtn"
             class="px-6 py-2 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-200 text-xs md:text-sm font-cinzel tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-lg active:scale-95">
-            Continuar viendo el cielo
+            Siguiente
         </button>
     </div>
 
     <!-- Contenedor del sobre de la carta (aparece al final del clímax) -->
     <div id="finalActions"
-        class="fixed inset-0 z-40 opacity-0 pointer-events-none transition-opacity duration-1000 flex flex-col items-center justify-center gap-6 mt-16">
+        class="fixed inset-0 z-40 opacity-0 pointer-events-none transition-opacity duration-1000 flex flex-col items-center justify-center gap-6 mt-48 md:mt-56">
         <p
             class="text-amber-300 font-cinzel text-xs md:text-sm tracking-[0.2em] uppercase animate-pulse drop-shadow-md">
             Tienes una carta

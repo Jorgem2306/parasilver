@@ -262,6 +262,7 @@ class TextParticle {
         c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
         c.fillStyle = this.color;
         c.fill();
+        c.globalAlpha = 1.0; // Restaurar para no afectar a otros elementos
     }
 }
 
@@ -552,14 +553,25 @@ closeLetterBtn.addEventListener('click', () => {
                 mainJarArea.style.transform = 'scale(1) translateY(0)';
                 mainJarArea.style.pointerEvents = 'auto';
 
-                document.getElementById('subHeaderInstruction').textContent = 'El firmamento está lleno de luz.';
+                document.getElementById('subHeaderInstruction').textContent = 'Toca el frasco para liberar una luciérnaga con un recuerdo.';
+                document.getElementById('counterTag').textContent = '5 Mensajes adentro';
+                
+                // Restablecer el estado para poder repetir la experiencia
+                currentWishIndex = 0;
+                finalCelebrationStarted = false;
+                setupInsideFireflies();
+                skyFireflies.length = 0;
 
-                // Dispersar el texto de Feliz Cumpleaños
+                // Dispersar el texto de Feliz Cumpleaños y luego borrarlo
                 textParticles.forEach(p => {
                     p.dispersing = true;
-                    p.vx = (Math.random() - 0.5) * 3;
-                    p.vy = -Math.random() * 3 - 1; // Vuelan suavemente hacia arriba
+                    p.vx = (Math.random() - 0.5) * 5;
+                    p.vy = -Math.random() * 4 - 2; // Vuelan hacia arriba más rápido
                 });
+
+                setTimeout(() => {
+                    textParticles = [];
+                }, 2500);
             }, 1000);
         }, 1200);
     }, 500);

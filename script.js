@@ -257,15 +257,11 @@ class TextParticle {
     }
     draw(c) {
         if (this.alpha <= 0) return;
-        c.save();
         c.globalAlpha = this.alpha;
         c.beginPath();
         c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
         c.fillStyle = this.color;
-        c.shadowColor = '#eab308';
-        c.shadowBlur = 10;
         c.fill();
-        c.restore();
     }
 }
 
